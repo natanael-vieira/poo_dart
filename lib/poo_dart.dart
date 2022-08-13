@@ -1,11 +1,24 @@
 import 'src/pessoa.dart';
+import 'dart:io';
+
+Pessoa pessoa = Pessoa();
 
 main(List<String> arguments) {
-  var pessoa = Pessoa(sexo: "M", idade: 34, nome: "Natanael", altura: 1.71, peso: 75);
-  print(pessoa.nome);
-  print(pessoa.idade);
-  print(pessoa.sexo);
+  print("====== ESCREVA SEU NOME =====");
+  pessoa.nome = stdin.readLineSync();
+  print("===== ESCREVA SUA IDADE =====");
+  pessoa.idade = stdin.readLineSync();
+  pessoa.idade = int.parse;
+  print("===== ESCREVA SUA ALTURA =====");
+  pessoa.altura = stdin.readLineSync();
+  pessoa.altura = double.parse;
+  print("===== ESCREVA SEU PESO =====");
+  pessoa.peso = stdin.readLineSync();
+  pessoa.peso = double.parse;
 
-  print(pessoa.peso);
-  print(pessoa.altura);
+  print("========================");
+
+  print("Nome: ${pessoa.nome}");
+  print("IMC: ${pessoa.imc()}");
+  print("Maior de idade: ${pessoa.maiorDeIdade()}");
 }
